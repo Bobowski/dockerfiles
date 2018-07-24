@@ -2,7 +2,7 @@ FROM intel-sgx/linux
 
 SHELL ["/bin/bash", "-c"]
 
-ARG SGX_BUILD_MODE=SIM
+ARG SGX_MODE=SIM
 
 # Install requirements
 RUN apt-get update && apt-get install -y --no-install-recommends \
@@ -23,8 +23,8 @@ RUN cd /tmp && \
 # Build
 RUN cd /tmp/intel-sgx-ssl/Linux && \
    source /opt/intel/sgxsdk/environment && \
-   make all test SGX_MODE=${SGX_BUILD_MODE} && \
-   make install SGX_MODE=${SGX_BUILD_MODE}
+   make all test SGX_MODE=${SGX_MODE} && \
+   make install SGX_MODE=${SGX_MODE}
 
 # Remove temporary files
 RUN rm -rf /tmp/*

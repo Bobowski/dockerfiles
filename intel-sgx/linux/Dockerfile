@@ -3,7 +3,8 @@ MAINTAINER Adam Bobowski <bobowski.adam@gmail.com>
 
 
 ARG SGX_SDK_FILE="sgx_linux_x64_sdk_2.2.100.45311.bin"
-ARG SGX_DOWNLOAD_URL="https://download.01.org/intel-sgx/linux-2.2/ubuntu64-desktop/${SGX_SDK_FILE}"
+ARG SGX_BIN_URL="https://download.01.org/intel-sgx/linux-2.2/ubuntu64-desktop"
+ARG SGX_DOWNLOAD_URL="${SGX_BIN_URL}/${SGX_SDK_FILE}"
 
 RUN apt-get update && apt-get install -y --no-install-recommends \
     wget \
