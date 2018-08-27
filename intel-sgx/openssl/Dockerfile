@@ -1,4 +1,4 @@
-FROM intel-sgx/linux
+FROM bobowski/intel-sgx/base
 MAINTAINER Adam Bobowski <bobowski.adam@gmail.com>
 
 SHELL ["/bin/bash", "-c"]
