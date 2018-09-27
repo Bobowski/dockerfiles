@@ -17,7 +17,7 @@ RUN buildDeps='build-essential wget ca-certificates pkg-config git make' \
     && wget https://www.openssl.org/source/openssl-1.1.0g.tar.gz \
     && cd /tmp/intel-sgx-ssl/Linux \
     && source /opt/intel/sgxsdk/environment \
-    && make all test SGX_MODE=${SGX_MODE} \
+    && make all SGX_MODE=${SGX_MODE} \
     && make install SGX_MODE=${SGX_MODE} \
     && rm -rf /tmp/* \
     && apt-get purge -y --auto-remove $buildDeps
